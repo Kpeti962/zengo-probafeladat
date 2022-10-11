@@ -1,0 +1,19 @@
+.actual-county-section{
+    background: #dce7ff;
+    height: 70px;
+    align-items: center;
+    color: #4a82ff;
+    font-size: 18px;
+}
+.actual-county{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    #megye{
+        margin-left: 146px;
+        font-weight: 900; 
+    }
+    h4{
+        width: 20%;
+    }
+}

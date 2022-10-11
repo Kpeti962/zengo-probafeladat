@@ -1,14 +1,15 @@
 import React from 'react';
+import "../components/styles/Nav.scss"
 import logo from "../img/logo.png"
 import title from "../img/title.png"
 
 const Nav = () => {
   return (
-    <div className='bg-white w-full h-60' >
-        <div className='flex flex-row items-center '>
+    <div className="nav-area" >
+        <div className='logo-bar '>
 
-       <img className='mx-5 my-3 ml-32 ' src={logo} alt="" />
-       <img className='mt-1'  src={title} alt="" />
+       <img className='logo' src={logo} alt="zengo" />
+       <img className='title'  src={title} alt="zengo" />
         </div>
     </div>
   )

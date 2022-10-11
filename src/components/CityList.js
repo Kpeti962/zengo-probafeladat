@@ -1,10 +1,13 @@
 import React from 'react';
-import City from './CityList/City';
+import Cities from './CityList/ActualCities';
+import ActualCounty from './CityList/ActualCounty';
+import "../components/styles/CityList.scss"
 
 const CityList = () => {
   return (
-    <div className='flex'>
-        <City />
+    <div className='list-section'>
+      <ActualCounty />
+        <Cities />
     </div>
   )
 };

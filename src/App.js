@@ -22,7 +22,7 @@ useEffect(() => {
   axios
   .get("https://probafeladat-api.zengo.eu/api/all_states", {
     headers: {
-      token: "6224922a57237ec294f5ef05a8a87b48",
+      "token": "efa18b92c2d9ea3bc8298b5f5d2432ce",
     },
   })
   .then((response) => {
@@ -38,9 +38,9 @@ useEffect(() => {
       <Nav />
      <div className="main-section">
      <Chooser newDataInput={newDataInput} setNewDataInput={setNewDataInput} counties={counties} setCounties={setCounties} setChoosenCounty={setChoosenCounty} />
-     {newDataInput ? (<CityList choosenCounty={choosenCounty} />) :
-     (<img className="starter-img" src={starterImg} alt="" />)
-     }
+     <CityList newDataInput={newDataInput} choosenCounty={choosenCounty} />
+    
+     
      </div> 
     </div>
   );

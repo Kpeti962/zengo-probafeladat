@@ -17,7 +17,7 @@ const Counties = ({ counties, setCounties, setChoosenCounty, setNewDataInput }) 
     <div className="counties-section">
       <h5>MEGYE</h5>
       <select onChange={choosenCountyHandler} className="county-picker">
-        <option value={null}>Válassz megyét</option>
+        <option>Válassz megyét</option>
         {counties.length > 0 &&
           counties.map((county) => {
             const { id, name } = county;

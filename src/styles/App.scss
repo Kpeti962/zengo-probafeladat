@@ -1,0 +1,16 @@
+.App{
+    background: #fff0e1;
+    position: relative;
+    height: 100vh;
+}
+
+.main-section{
+  display: flex;
+  .starter-img{
+    height: 273px;
+    width: 398px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+  } 
+}

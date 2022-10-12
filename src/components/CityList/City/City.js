@@ -1,9 +1,9 @@
 import React from "react";
+import "../../../styles/City.scss";
 
 const City = () => {
   return (
-    <div>
-      
+    <div className="city-list-wrapper">
       <ul>
         <li>asdsad</li>
         <li>asdsad</li>

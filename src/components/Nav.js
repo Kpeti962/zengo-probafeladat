@@ -1,5 +1,5 @@
 import React from 'react';
-import "../components/styles/Nav.scss"
+import "../styles/Nav.scss"
 import logo from "../img/logo.png"
 import title from "../img/title.png"
 

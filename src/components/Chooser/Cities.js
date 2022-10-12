@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Cities.scss";
+import "../../styles/Cities.scss";
 import arrow from "../../img/city-arrow.png";
 
 const Cities = () => {

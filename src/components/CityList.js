@@ -1,12 +1,12 @@
 import React from 'react';
 import Cities from './CityList/ActualCities';
 import ActualCounty from './CityList/ActualCounty';
-import "../components/styles/CityList.scss"
+import "../styles/CityList.scss"
 
-const CityList = () => {
+const CityList = ({choosenCounty}) => {
   return (
     <div className='list-section'>
-      <ActualCounty />
+      <ActualCounty choosenCounty={choosenCounty} />
         <Cities />
     </div>
   )

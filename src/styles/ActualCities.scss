@@ -2,6 +2,7 @@
     background: white;
     height: 771px;
     display: flex;
+    margin: 0;
 }
 .varosok{
     margin-left: 117px;
@@ -11,4 +12,10 @@
         font-size: 18px;
     }
 }
-
+.city-list-wrapper {
+    margin-top: 25px;
+    ul {
+      list-style-type: none;
+      
+  }
+}

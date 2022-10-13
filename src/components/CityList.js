@@ -4,8 +4,9 @@ import ActualCounty from "./CityList/ActualCounty";
 import "../styles/CityList.scss";
 import starterImg from "../img/starter-img.png";
 import { motion } from "framer-motion";
+import ActualCities from "./CityList/ActualCities";
 
-const CityList = ({ choosenCounty, newDataInput }) => {
+const CityList = ({ choosenCounty, newDataInput, cities }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}
@@ -15,7 +16,7 @@ const CityList = ({ choosenCounty, newDataInput }) => {
       className="list-section"
     >
       {newDataInput && <ActualCounty choosenCounty={choosenCounty} />}
-      {newDataInput && <Cities />}
+      {newDataInput && <ActualCities cities={cities} />}
       {newDataInput === false && (
         <img className="starter-img" src={starterImg} alt="" />
       )}

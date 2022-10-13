@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 import "../../styles/Counties.scss";
 import arrow from "../../img/county-arrow.png";
 import axios from "axios";
+import { getTheCity } from "../../ApiRequests";
 
-const Counties = ({ counties, setCounties, setChoosenCounty, setNewDataInput }) => {
+
+const Counties = ({
+  counties,
+  setCounties,
+  setChoosenCounty,
+  setNewDataInput,
+  setCities
+}) => {
 
 
-//Put the choosen county to the choosenCounty useState
-  const choosenCountyHandler = (e) => {
+  const choosenCountyHandler = async (e) => {
     setChoosenCounty(counties[Number(e.target.value) / 2 - 1].name);
-    setNewDataInput(true)
-    console.log(e.target.value);
-  };
+    setNewDataInput(true);
+    let responseCities = await getTheCity(e.target.value)
+    setCities(responseCities);
+   
 
+  };
   return (
     <div className="counties-section">
       <h5>MEGYE</h5>
@@ -21,8 +30,9 @@ const Counties = ({ counties, setCounties, setChoosenCounty, setNewDataInput }) 
         {counties.length > 0 &&
           counties.map((county) => {
             const { id, name } = county;
+
             return (
-              <option key={id} value={id}>
+              <option key={id} value={county.id}>
                 {county?.name}
               </option>
             );

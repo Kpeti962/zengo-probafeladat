@@ -4,14 +4,8 @@ import "../../styles/ActualCities.scss";
 import City from "./City/City";
 import { motion } from "framer-motion";
 
-const ActualCities = () => {
-
-  const [actualCounty, setActualCounty] = useState()
-
-  useEffect(() => {
-    
-  }, []);
-
+const ActualCities = ({ cities }) => {
+ 
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}
@@ -23,8 +17,15 @@ const ActualCities = () => {
       <div className="varosok">
         <h4>VÁROSOK</h4>
       </div>
-      <div className="cities-list">
-        <City />
+      <div className="city-list-wrapper">
+        <ul>
+          {cities &&
+            cities.length > 0 &&
+            cities.map((city) => {
+              const { id, name } = city;
+              return <City city={city} />;
+            })}
+        </ul>
       </div>
     </motion.div>
   );

@@ -3,55 +3,51 @@ import CityList from "./components/CityList";
 import Nav from "./components/Nav";
 import Chooser from "./components/Chooser";
 import "./styles/App.scss";
-import axios from "axios";
-import starterImg from "./img/starter-img.png";
-import { getTheCounty } from "./ApiRequests";
+import { getCounties} from "./ApiRequests";
 
 function App() {
-
-  //Collect the API
   const [counties, setCounties] = useState([]);
-  const [cities, setCities] = useState([])
-
-  const [newCity, setNewCity] = useState("")
-
-  //Get the choosen county from the option input
+  const [cities, setCities] = useState([]);
+  const [newCity, setNewCity] = useState("");
   const [choosenCounty, setChoosenCounty] = useState("");
-  //For make the city input and the list visible
+  const [choosenCountyId, setChoosenCountyId] = useState();
   const [newDataInput, setNewDataInput] = useState(false);
-
-  //Get the counties from the API to the county useState hook
-  useEffect( ()  => {
+  
+  useEffect(() => {
     const fetchCounties = async () => {
-      const countiesArray = await getTheCounty();
-      return setCounties(countiesArray)
-    }
-    setCounties(fetchCounties())
-    
+      const countiesArray = await getCounties();
+      setCounties(countiesArray);
+    };
+    fetchCounties();
   }, []);
-
-
-
 
   return (
     <div className="App">
       <Nav />
       <div className="main-section">
-     {counties.length > 0 && <>
-     <Chooser
-     newCity={newCity}
-     setNewCity={setNewCity}
-     cities={cities}
-        setCities={setCities}
-        newDataInput={newDataInput}
-        setNewDataInput={setNewDataInput}
-        counties={counties}
-        setCounties={setCounties}
-        setChoosenCounty={setChoosenCounty}
-        />
-        <CityList cities={cities} newDataInput={newDataInput} choosenCounty={choosenCounty} />
-        </>
-        }
+        {counties.length > 0 && (
+          <>
+            <Chooser
+              choosenCountyId={choosenCountyId}
+              setChoosenCountyId={setChoosenCountyId}
+              newCity={newCity}
+              setNewCity={setNewCity}
+              cities={cities}
+              setCities={setCities}
+              newDataInput={newDataInput}
+              setNewDataInput={setNewDataInput}
+              counties={counties}
+              setCounties={setCounties}
+              setChoosenCounty={setChoosenCounty}
+            />
+            <CityList
+              setCities={setCities}
+              cities={cities}
+              newDataInput={newDataInput}
+              choosenCounty={choosenCounty}
+            />
+          </>
+        )}
       </div>
     </div>
   );

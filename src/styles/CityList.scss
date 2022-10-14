@@ -1,13 +1,17 @@
-.list-section{
-    margin-top: 78px;
-    width: 652px;
-    position: relative;
-    .starter-img{
-        height: 273px;
-        width: 398px;
-        position: absolute;
-        top: 20%;
-        left: 25%
-       
-      } 
+.list-section {
+  margin-top: 78px;
+  width: 652px;
+  position: relative;
+  .starter-img {
+    height: 273px;
+    width: 398px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+  }
 }
+ @media screen and (max-width: 950px) {
+  .list-section {
+    margin: 0 0 0 10px;
+  }
+} 

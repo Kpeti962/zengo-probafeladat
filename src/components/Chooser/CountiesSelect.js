@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from "react";
-import "../../styles/Counties.scss";
+import React from "react";
 import arrow from "../../img/county-arrow.png";
-import axios from "axios";
-import { getTheCity } from "../../ApiRequests";
+import { getTheCities } from "../../ApiRequests";
 
-
-const Counties = ({
+const CountiesSelect = ({
+  setChoosenCountyId,
   counties,
   setCounties,
   setChoosenCounty,
   setNewDataInput,
-  setCities
+  setCities,
 }) => {
-
-
   const choosenCountyHandler = async (e) => {
     setChoosenCounty(counties[Number(e.target.value) / 2 - 1].name);
+    setChoosenCountyId(counties[Number(e.target.value) / 2 - 1].id);
     setNewDataInput(true);
-    let responseCities = await getTheCity(e.target.value)
+    let responseCities = await getTheCities(e.target.value);
     setCities(responseCities);
-   
-
   };
+
+  
+
   return (
     <div className="counties-section">
       <h5>MEGYE</h5>
@@ -29,7 +27,7 @@ const Counties = ({
         <option>Válassz megyét</option>
         {counties.length > 0 &&
           counties.map((county) => {
-            const { id, name } = county;
+            const { id } = county;
 
             return (
               <option key={id} value={county.id}>
@@ -44,4 +42,4 @@ const Counties = ({
   );
 };
 
-export default Counties;
+export default CountiesSelect;

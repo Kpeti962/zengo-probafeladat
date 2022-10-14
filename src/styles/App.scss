@@ -1,12 +1,26 @@
-*{
-  font-family: 'Titillium Web', sans-serif;
+* {
+  font-family: "Titillium Web", sans-serif;
 }
-.App{
-    background: #fff0e1;
-    max-height: 2030px;
+.App {
+  background: #fff0e1;
+  max-height: 2030px;
+
 }
 
-.main-section{
+.main-section {
   display: flex;
-
 }
+ @media screen and (max-width: 950px) {
+  .main-section {
+    flex-direction: column;
+  }
+} 
+
+@import './ActualCities.scss';
+@import './ActualCounty.scss';
+@import './Chooser.scss';
+@import './Cities.scss';
+@import './CityList.scss';
+@import './City.scss';
+@import './Counties.scss';
+@import './Nav.scss';

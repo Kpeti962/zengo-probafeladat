@@ -1,28 +1,54 @@
 import React, { useState } from "react";
-import "../../../styles/City.scss";
 import deleteBtn from "../../../img/delete-button.png";
 import xBtn from "../../../img/x-button.png";
 import checkBtn from "../../../img/check-button.png";
 import { motion } from "framer-motion";
+import { deleteCity } from "../../../ApiRequests";
 
-const City = ({ name, id, city }) => {
+const City = ({ id, city, cities, setCities }) => {
+  const [isHighlighted, setIsHighlighted] = useState(false);
 
-  const [isEditable, setIsEditable] = useState(false)
-
-const isEditableHandler = () =>{
-setIsEditable(true)
-}
+  const isEditableHandler = () => {
+    setIsHighlighted(true);
+  };
+  const deleteCityHandler = async () => {
+    console.log(city.id);
+    await deleteCity(city.id);
+    const citiesArrayAfterDelete = cities.filter((item) => item.id !== city.id);
+    setCities(citiesArrayAfterDelete);
+  };
 
   return (
     <div key={id} className="city-line">
-      <div className="city">
-      <li contentEditable={true} onClick={isEditableHandler}>{city?.name}</li>
+      <div onClick={isEditableHandler} className="city">
+        <li
+          className={isHighlighted ? "highlightedCity" : ""}
+          contentEditable={true}
+          value={city?.id}
+        >
+          {city?.name}
+        </li>
       </div>
-      {isEditable && (<div className="city-btn">
-      <motion.img whileTap={{ scale: 0.75 }} src={deleteBtn} alt="" />
-      <motion.img whileTap={{ scale: 0.75 }} src={checkBtn} alt="" />
-      <motion.img onClick={()=>{setIsEditable(false)}} whileTap={{ scale: 0.75 }} src={xBtn} alt="" />
-      </div>)}
+      {isHighlighted && (
+        <div className="city-btns">
+          <motion.img
+            onClick={deleteCityHandler}
+            whileTap={{ scale: 0.75 }}
+            src={deleteBtn}
+            alt=""
+          />
+
+          <motion.img whileTap={{ scale: 0.75 }} src={checkBtn} alt="" />
+          <motion.img
+            onClick={() => {
+              setIsHighlighted(false);
+            }}
+            whileTap={{ scale: 0.75 }}
+            src={xBtn}
+            alt=""
+          />
+        </div>
+      )}
     </div>
   );
 };

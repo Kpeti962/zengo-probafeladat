@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/Nav.scss";
 import logo from "../img/logo.png";
 import title from "../img/title.png";
 

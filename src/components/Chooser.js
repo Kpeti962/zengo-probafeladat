@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import "../styles/Chooser.scss";
-import Cities from "./Chooser/Cities";
-import Counties from "./Chooser/Counties";
+import React from "react";
+import CityInput from "./Chooser/CityInput";
+import CountiesSelect from "./Chooser/CountiesSelect";
 import upperTriangles from "../img/upper-triangles.png";
 import lowerTriangles from "../img/lower-triangles.png";
 
 const Chooser = ({
+  choosenCountyId,
+  setChoosenCountyId,
   newCity,
   cities,
   setNewCity,
@@ -14,20 +15,30 @@ const Chooser = ({
   setChoosenCounty,
   newDataInput,
   setNewDataInput,
-  setCities
+  setCities,
 }) => {
   return (
     <div>
       <div className="chooser-section">
         <img src={upperTriangles} alt="" />
-        <Counties
-        setCities={setCities}
+        <CountiesSelect
+          setChoosenCountyId={setChoosenCountyId}
+          setCities={setCities}
           counties={counties}
           setCounties={setCounties}
           setNewDataInput={setNewDataInput}
           setChoosenCounty={setChoosenCounty}
         />
-        {newDataInput && <Cities newCity={newCity} setCities={setCities} cities={cities} setNewCity={setNewCity} counties={counties} />}
+        {newDataInput && (
+          <CityInput
+            choosenCountyId={choosenCountyId}
+            newCity={newCity}
+            setCities={setCities}
+            cities={cities}
+            setNewCity={setNewCity}
+            counties={counties}
+          />
+        )}
         <img src={lowerTriangles} alt="" />
       </div>
     </div>

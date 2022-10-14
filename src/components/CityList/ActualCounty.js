@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/ActualCounty.scss";
 import { motion } from "framer-motion";
 
 const ActualCounty = ({ choosenCounty }) => {

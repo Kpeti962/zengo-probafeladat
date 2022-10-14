@@ -1,11 +1,8 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "../../styles/ActualCities.scss";
+import React from "react";
 import City from "./City/City";
 import { motion } from "framer-motion";
 
-const ActualCities = ({ cities }) => {
- 
+const ActualCities = ({ cities, setCities }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}
@@ -22,8 +19,15 @@ const ActualCities = ({ cities }) => {
           {cities &&
             cities.length > 0 &&
             cities.map((city) => {
-              const { id, name } = city;
-              return <City city={city} />;
+              const { id } = city;
+              return (
+                <City
+                  setCities={setCities}
+                  cities={cities}
+                  key={id}
+                  city={city}
+                />
+              );
             })}
         </ul>
       </div>

@@ -3,29 +3,24 @@ import deleteBtn from "../../../img/delete-button.png";
 import xBtn from "../../../img/x-button.png";
 import checkBtn from "../../../img/check-button.png";
 import { motion } from "framer-motion";
-import { deleteCity, editCity, getTheCities } from "../../../ApiRequests";
+import { deleteCity, editCity } from "../../../ApiRequests";
 
 const City = ({ id, city, cities, setCities }) => {
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [editedCityValue, setEditedCityValue] = useState("");
   const [editAlertOpen, setEditAlertOpen] = useState(false);
   const [editAlertMessage, setEditAlertMessage] = useState("");
-  const [deleteAlertOpen, setDeleteAlertOpen] = useState(false);
-  const [deleteAlertMessage, setDeleteAlertMessage] = useState("");
 
   const isEditableHandler = () => {
     setIsHighlighted(true);
   };
   const deleteCityHandler = async () => {
     if (window.confirm("Valóban törölni szeretnéd?")) {
-      await deleteCity(city.id)
-          const citiesArrayAfterDelete = cities.filter(
-            (item) => item.id !== city.id
-          );
-          setCities(citiesArrayAfterDelete);
-          setDeleteAlertOpen(true);
-          setDeleteAlertMessage("Sikeresen törölve");
-          setTimeout(() => setDeleteAlertOpen(false), 1500);
+      await deleteCity(city.id);
+      const citiesArrayAfterDelete = cities.filter(
+        (item) => item.id !== city.id
+      );
+      setCities(citiesArrayAfterDelete);
     }
   };
 
@@ -92,24 +87,19 @@ const City = ({ id, city, cities, setCities }) => {
           />
         </div>
       )}
-      {editAlertOpen && <motion.h4
-        initial={{ opacity: 0, y: -200 }}
-        animate={{ opacity: 0.8, y: 0 }}
-        exit={{ opacity: 0, y: -200 }}
-        transition={{ duration: 0.7 }}
-        className={`alert ${
-          editAlertMessage === "Sikeresen módosítva" ? " success" : "error"
-        }`}
-      >{editAlertMessage}</motion.h4>}
-      {deleteAlertOpen && <motion.h4
-        initial={{ opacity: 0, y: -200 }}
-        animate={{ opacity: 0.8, y: 0 }}
-        exit={{ opacity: 0, y: -200 }}
-        transition={{ duration: 0.7 }}
-        className={`alert ${
-          deleteAlertMessage === "Sikeresen törölve" ? " success" : "error"
-        }`}
-      >{deleteAlertMessage}</motion.h4>}
+      {editAlertOpen && (
+        <motion.h4
+          initial={{ opacity: 0, y: -200 }}
+          animate={{ opacity: 0.8, y: 0 }}
+          exit={{ opacity: 0, y: -200 }}
+          transition={{ duration: 0.7 }}
+          className={`edit-alert ${
+            editAlertMessage === "Sikeresen módosítva" ? " success" : "error"
+          }`}
+        >
+          {editAlertMessage}
+        </motion.h4>
+      )}
     </div>
   );
 };

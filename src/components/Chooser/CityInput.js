@@ -4,25 +4,24 @@ import { motion } from "framer-motion";
 import { putNewCity } from "../../ApiRequests";
 
 const Cities = ({
-  counties,
-  setNewCity,
+  setNewCityValue,
   cities,
   setCities,
-  newCity,
+  newCityValue,
   choosenCountyId,
 }) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
   const newCityInput = (e) => {
-    setNewCity(e.target.value);
+    setNewCityValue(e.target.value);
   };
   const newCityHandler = async (e) => {
     e.preventDefault();
-    await putNewCity(newCity, choosenCountyId).then((response) => {
+    await putNewCity(newCityValue, choosenCountyId).then((response) => {
       if (response.data.success) {
         setCities([...cities, response.data.data]);
-        setNewCity("");
+        setNewCityValue("");
         setAlertOpen(true);
         setAlertMessage("Sikeresen hozzáadva");
         setTimeout(() => setAlertOpen(false), 1500);
@@ -36,9 +35,9 @@ const Cities = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -200 }}
+      initial={{ opacity: 0, y: 200 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -200 }}
+      exit={{ opacity: 0, y: 200 }}
       transition={{ duration: 0.7 }}
       className="cities-section"
     >
@@ -48,7 +47,7 @@ const Cities = ({
         onChange={newCityInput}
         placeholder="Település neve"
         className="city-picker"
-        value={newCity}
+        value={newCityValue}
       />
       <motion.button
         onClick={newCityHandler}

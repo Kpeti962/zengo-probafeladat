@@ -4,32 +4,31 @@
   --light-green: #cae99a;
   --cities-green: #a3cd63;
   --green: #80ba27;
-   --county-title-blue: #4a82ff;
+  --county-title-blue: #4a82ff;
   --county-title-bg-blue: #dce7ff;
 }
 * {
   font-family: "Titillium Web", sans-serif;
 }
+
 .App {
   background: var(--bg-color);
-  max-height: 2030px;
-
+  width: 100%;
 }
-
 .main-section {
   display: flex;
 }
- @media screen and (max-width: 950px) {
+@media screen and (max-width: 950px) {
   .main-section {
     flex-direction: column;
   }
-} 
+}
 
-@import './ActualCities.scss';
-@import './ActualCounty.scss';
-@import './Chooser.scss';
-@import './CityInput.scss';
-@import './CityList.scss';
-@import './City.scss';
-@import './Counties.scss';
-@import './Nav.scss';
+@import "./ActualCities.scss";
+@import "./ActualCounty.scss";
+@import "./Chooser.scss";
+@import "./CityInput.scss";
+@import "./CityList.scss";
+@import "./City.scss";
+@import "./Counties.scss";
+@import "./Nav.scss";

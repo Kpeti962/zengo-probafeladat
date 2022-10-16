@@ -5,12 +5,11 @@ import upperTriangles from "../img/upper-triangles.png";
 import lowerTriangles from "../img/lower-triangles.png";
 
 const Chooser = ({
- 
   choosenCountyId,
   setChoosenCountyId,
-  newCity,
+  newCityValue,
   cities,
-  setNewCity,
+  setNewCityValue,
   counties,
   setCounties,
   setChoosenCounty,
@@ -23,27 +22,25 @@ const Chooser = ({
       <div className="chooser-section">
         <img src={upperTriangles} alt="" />
         <div className="select-input-wrapper">
-
-        <CountiesSelect
-          setChoosenCountyId={setChoosenCountyId}
-          setCities={setCities}
-          counties={counties}
-          setCounties={setCounties}
-          setNewDataInput={setNewDataInput}
-          setChoosenCounty={setChoosenCounty}
-          />
-        {newDataInput && (
-          <CityInput
-          
-            choosenCountyId={choosenCountyId}
-            newCity={newCity}
+          <CountiesSelect
+            setChoosenCountyId={setChoosenCountyId}
             setCities={setCities}
-            cities={cities}
-            setNewCity={setNewCity}
             counties={counties}
+            setCounties={setCounties}
+            setNewDataInput={setNewDataInput}
+            setChoosenCounty={setChoosenCounty}
+          />
+          {newDataInput && (
+            <CityInput
+              choosenCountyId={choosenCountyId}
+              newCityValue={newCityValue}
+              setCities={setCities}
+              cities={cities}
+              setNewCityValue={setNewCityValue}
+              counties={counties}
             />
-            )}
-            </div>
+          )}
+        </div>
         <img src={lowerTriangles} alt="" />
       </div>
     </div>

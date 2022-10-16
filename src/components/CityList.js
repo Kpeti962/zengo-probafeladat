@@ -4,7 +4,7 @@ import starterImg from "../img/starter-img.png";
 import { motion } from "framer-motion";
 import ActualCities from "./CityList/ActualCities";
 
-const CityList = ({ choosenCounty, newDataInput, cities, setCities}) => {
+const CityList = ({ choosenCounty, newDataInput, cities, setCities }) => {
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}

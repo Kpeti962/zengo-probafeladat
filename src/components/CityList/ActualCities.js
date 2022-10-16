@@ -22,7 +22,6 @@ const ActualCities = ({ cities, setCities }) => {
               const { id } = city;
               return (
                 <City
-                
                   setCities={setCities}
                   cities={cities}
                   key={id}

@@ -33,35 +33,35 @@
   margin-top: 15px;
   cursor: pointer;
 }
-.alert{
+.alert {
   position: fixed;
   top: 10%;
   left: 45%;
   padding: 10px 30px;
   border-radius: 10px;
   z-index: 15;
- 
 }
-.success{
+.success {
   background: var(--light-green);
 }
-.error{
+.error {
   background: rgb(255, 96, 96);
 }
-
 
 @media screen and (max-width: 950px) {
   .cities-section {
     img {
- opacity: 0;
+      opacity: 0;
     }
   }
 }
 @media screen and (max-width: 750px) {
   .alert {
-    left: 15%;
+    left: 35%;
   }
 }
-
-
-
+@media screen and (max-width: 450px) {
+  .alert {
+    left: 45%;
+  }
+}

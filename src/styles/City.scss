@@ -14,9 +14,6 @@
     width: 275px;
     cursor: pointer;
   }
-  .highlighted-city {
-    opacity: 0;
-  }
   .city-btns {
     display: flex;
 
@@ -27,31 +24,27 @@
       left: 1%;
       top: 9%;
     }
-
     img {
       margin: 0 3px;
       cursor: pointer;
     }
   }
-  .alert{
+  .edit-alert {
     position: fixed;
     top: 10%;
-    left: 45%;
     width: 300px;
     text-align: center;
     padding: 10px 30px;
     border-radius: 10px;
     z-index: 15;
   }
-  .success{
-    
+  .success {
     background: var(--light-green);
   }
-  .error{
+  .error {
     background: rgb(255, 96, 96);
   }
 }
-
 @media screen and (max-width: 640px) {
   .city-line {
     flex-direction: column;

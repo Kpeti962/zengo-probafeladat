@@ -3,17 +3,15 @@ import CityList from "./components/CityList";
 import Nav from "./components/Nav";
 import Chooser from "./components/Chooser";
 import "./styles/App.scss";
-import { getCounties} from "./ApiRequests";
+import { getCounties } from "./ApiRequests";
 
 function App() {
   const [counties, setCounties] = useState([]);
   const [cities, setCities] = useState([]);
-  const [newCity, setNewCity] = useState("");
+  const [newCityValue, setNewCityValue] = useState("");
   const [choosenCounty, setChoosenCounty] = useState("");
   const [choosenCountyId, setChoosenCountyId] = useState();
   const [newDataInput, setNewDataInput] = useState(false);
-
-  
 
   useEffect(() => {
     const fetchCounties = async () => {
@@ -30,11 +28,10 @@ function App() {
         {counties.length > 0 && (
           <>
             <Chooser
-           
               choosenCountyId={choosenCountyId}
               setChoosenCountyId={setChoosenCountyId}
-              newCity={newCity}
-              setNewCity={setNewCity}
+              newCityValue={newCityValue}
+              setNewCityValue={setNewCityValue}
               cities={cities}
               setCities={setCities}
               newDataInput={newDataInput}
@@ -44,7 +41,6 @@ function App() {
               setChoosenCounty={setChoosenCounty}
             />
             <CityList
-           
               setCities={setCities}
               cities={cities}
               newDataInput={newDataInput}

@@ -1,18 +1,26 @@
-.nav-area{
-    background: white;
-    width: 100%;
-    height: 60px;
+.nav-area {
+  background: white;
+  width: 100%;
+  height: 60px;
 }
 
-.logo-bar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.logo-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.logo{
-    margin: 5px 15px 0 144px;
- 
+.logo {
+  margin: 5px 15px 0 144px;
 }
-.title{
-    margin-top: 10px;
+.title {
+  margin-top: 10px;
+}
+@media screen and (max-width: 950px) {
+  .logo-bar {
+    justify-content: center;
+    margin: 5px 0;
+  }
+  .logo {
+    margin: 0;
+  }
 }

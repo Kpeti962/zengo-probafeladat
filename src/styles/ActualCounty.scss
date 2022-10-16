@@ -1,28 +1,25 @@
-.actual-county-section{
-    background: var(--county-title-bg-blue);
-    height: 70px;
-    align-items: center;
-    color: var(--county-title-blue);
-    font-size: 18px;
+.actual-county-section {
+  background: var(--county-title-bg-blue);
+  height: 70px;
+  align-items: center;
+  color: var(--county-title-blue);
+  font-size: 18px;
 }
-.actual-county{
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    #megye{
-        margin-left: 95px;
-        font-weight: 900; 
-        margin-right: 60px;
-    }
-   
+.actual-county {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  #megye {
+    margin-left: 95px;
+    font-weight: 900;
+    margin-right: 60px;
+  }
 }
 
-@media screen and (max-width: 600px){
-    .actual-county{
-        #megye{
-           margin-left: 20px;
-
-        }
-      
+@media screen and (max-width: 600px) {
+  .actual-county {
+    #megye {
+      margin-left: 20px;
     }
+  }
 }

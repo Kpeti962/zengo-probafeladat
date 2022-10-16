@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #b1c9ff;
+    background: var(--county-picker-blue);
     height: 130px;
     h5{
         margin: 5px;
@@ -16,8 +16,19 @@
         z-index: 10;
         
     }
+    .county-picker{
+        width: 263px;
+        height: 34px;
+    }
 }
-.county-picker{
-    width: 263px;
-    height: 34px;
+
+@media screen and (max-width: 950px) {
+    .counties-section{
+        padding-bottom: 40px;
+        img{
+            opacity: 0;
+        }
+      
+    }
+    
 }

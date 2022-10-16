@@ -29,23 +29,24 @@ export const getTheCities = async (countyId) => {
 };
 
 
- export const putNewCity = async ( newCityName, countyId ) => {
-  try {
-    const response = await axios.put(
-      '/api/city',
-      {name: newCityName,
-      state_id: countyId },
-    );
-   
-    return response.data.data;
-  } catch (err) {
-    return console.log(err);
-  }
-}; 
+ export const putNewCity = async (newCityName, countyId) => {
+   return  axios.put("/api/city", {
+     name: newCityName,
+     state_id: countyId,
+   });
+ }; 
 
  export const deleteCity = async ( cityId ) => {
-      axios.delete(
+     return axios.delete(
       '/api/city',
       { data: {city_id: cityId},}
+    );
+}; 
+
+export const editCity = async ( editedCityName, cityId ) => {
+return axios.patch(
+      '/api/city',
+      {name: editedCityName,
+      city_id: cityId },
     );
 }; 

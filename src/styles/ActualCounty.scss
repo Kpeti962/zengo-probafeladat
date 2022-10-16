@@ -1,8 +1,8 @@
 .actual-county-section{
-    background: #dce7ff;
+    background: var(--county-title-bg-blue);
     height: 70px;
     align-items: center;
-    color: #4a82ff;
+    color: var(--county-title-blue);
     font-size: 18px;
 }
 .actual-county{
@@ -15,4 +15,14 @@
         margin-right: 60px;
     }
    
+}
+
+@media screen and (max-width: 600px){
+    .actual-county{
+        #megye{
+           margin-left: 20px;
+
+        }
+      
+    }
 }

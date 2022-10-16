@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #cae99a;
+  background: var(--light-green);
   height: 170px;
   h5 {
     margin: 5px;
@@ -27,18 +27,41 @@
   width: 263px;
   height: 34px;
   color: white;
-  background: #80ba27;
+  background: var(--green);
   border: none;
   border-radius: 5px;
   margin-top: 15px;
   cursor: pointer;
 }
+.alert{
+  position: fixed;
+  top: 10%;
+  left: 45%;
+  padding: 10px 30px;
+  border-radius: 10px;
+  z-index: 15;
+ 
+}
+.success{
+  background: var(--light-green);
+}
+.error{
+  background: rgb(255, 96, 96);
+}
+
 
 @media screen and (max-width: 950px) {
   .cities-section {
     img {
-      top: 91%;
-      left: 50%;
+ opacity: 0;
     }
   }
 }
+@media screen and (max-width: 750px) {
+  .alert {
+    left: 15%;
+  }
+}
+
+
+

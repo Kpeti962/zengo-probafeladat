@@ -12,7 +12,9 @@ function App() {
   const [choosenCounty, setChoosenCounty] = useState("");
   const [choosenCountyId, setChoosenCountyId] = useState();
   const [newDataInput, setNewDataInput] = useState(false);
+
   
+
   useEffect(() => {
     const fetchCounties = async () => {
       const countiesArray = await getCounties();
@@ -28,6 +30,7 @@ function App() {
         {counties.length > 0 && (
           <>
             <Chooser
+           
               choosenCountyId={choosenCountyId}
               setChoosenCountyId={setChoosenCountyId}
               newCity={newCity}
@@ -41,6 +44,7 @@ function App() {
               setChoosenCounty={setChoosenCounty}
             />
             <CityList
+           
               setCities={setCities}
               cities={cities}
               newDataInput={newDataInput}

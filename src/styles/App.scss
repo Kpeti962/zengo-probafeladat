@@ -1,8 +1,17 @@
+:root {
+  --bg-color: #fff0e1;
+  --county-picker-blue: #b1c9ff;
+  --light-green: #cae99a;
+  --cities-green: #a3cd63;
+  --green: #80ba27;
+   --county-title-blue: #4a82ff;
+  --county-title-bg-blue: #dce7ff;
+}
 * {
   font-family: "Titillium Web", sans-serif;
 }
 .App {
-  background: #fff0e1;
+  background: var(--bg-color);
   max-height: 2030px;
 
 }
@@ -19,7 +28,7 @@
 @import './ActualCities.scss';
 @import './ActualCounty.scss';
 @import './Chooser.scss';
-@import './Cities.scss';
+@import './CityInput.scss';
 @import './CityList.scss';
 @import './City.scss';
 @import './Counties.scss';
